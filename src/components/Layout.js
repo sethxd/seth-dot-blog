@@ -1,13 +1,32 @@
 import React from "react"
-import Header from "./header"
 import { Helmet } from "react-helmet"
+import { useStaticQuery, graphql, Link } from "gatsby"
 
 const Layout = ({ children }) => {
+  const data = useStaticQuery(graphql`
+    query {
+      site {
+        siteMetadata {
+          title
+        }
+      }
+    }
+  `)
+
   return (
     <div>
-      <Helmet title="Seth's thing" />
-      <Header></Header>
-      <main>{children}</main>
+      <Helmet title={data.site.siteMetadata.title} />
+      <header className="p-8 text-left bg-black text-white">
+        <div className="flex justify-between items-center">
+          <Link to="/">
+            <h1 className="text-5xl font-thin">
+              {data.site.siteMetadata.title}
+            </h1>
+          </Link>
+          <nav>About</nav>
+        </div>
+      </header>
+      <main className="max-w-6xl mx-auto">{children}</main>
     </div>
   )
 }

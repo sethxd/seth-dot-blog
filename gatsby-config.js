@@ -6,9 +6,9 @@
 
 module.exports = {
   siteMetadata: {
-    title: `Seth's personal blog`,
-    description: `A place to write things, sort of, but more to build things.`,
-    siteUrl: `https://seth-dehaan.com`,
+    title: "seth.blog",
+    description: "A place to write things, sort of, but more to build things.",
+    siteUrl: "https://seth-dehaan.com",
   },
   plugins: [
     "gatsby-plugin-postcss",
@@ -22,6 +22,13 @@ module.exports = {
       options: {
         name: `posts`,
         path: `${__dirname}/src/posts/`,
+      },
+    },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: `images`,
+        path: `${__dirname}/src/images/`,
       },
     },
   ],

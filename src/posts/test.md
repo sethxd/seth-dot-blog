@@ -2,6 +2,7 @@
 title: Introductory Post
 slug: intro-post
 tag: general
+image: ../images/sekiro-bg.png
 ---
 
 Ut ipsum laborum minim sit consectetur. Adipisicing adipisicing labore incididunt esse id ea non Lorem. Magna esse aliqua culpa laborum reprehenderit duis amet qui cillum nulla aliquip sit. Est anim elit anim nostrud do duis exercitation sint labore fugiat enim in nostrud aute. Ad magna est amet ut anim consequat culpa. Est occaecat officia velit aliquip sint magna.
