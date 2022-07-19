@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+.post-cover .gatsby-image-wrapper {
+  position: absolute;
+}
+
 .markdown-content h2 {
   font-size: 1.5rem;
   line-height: 1.5rem;
