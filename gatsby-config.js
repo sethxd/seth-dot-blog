@@ -58,8 +58,6 @@ module.exports = {
         name: "seth.blog",
         short_name: "seth.blog",
         start_url: "/",
-        background_color: "#f7f0eb",
-        themecolor: "#f7f0eb",
         display: "standalone",
         icon: "src/images/code-slash-green.svg",
       },

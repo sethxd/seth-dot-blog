@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+.markdown-content h2 {
+  font-size: 1.5rem;
+  line-height: 1.5rem;
+  font-weight: bold;
+  margin: 1.5rem 0;
+}
+
 .markdown-content p {
   margin-bottom: 1rem;
 }

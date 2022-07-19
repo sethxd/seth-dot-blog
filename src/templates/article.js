@@ -5,14 +5,12 @@ import { Helmet } from "react-helmet"
 
 const Article = ({ data }) => {
   const { html } = data.markdownRemark
-  const { title, tag } = data.markdownRemark.frontmatter
+  const { title, tag, date } = data.markdownRemark.frontmatter
   return (
     <Layout>
       <Helmet title={`${title} | seth.blog`} />
-      <section className="p-8 w-4/5 mx-auto">
-        <span className="text-slate-500 text-sm">
-          {data.markdownRemark.parent.modifiedTime}
-        </span>
+      <section className="w-100 p-4 md:p-8 md:w-4/5 mx-auto">
+        <span className="text-slate-500 text-sm">{date}</span>
         <h1 className="font-semibold text-4xl mb-4">{title}</h1>
         <span className="inline-block py-1 px-3 bg-slate-500 text-white">
           {tag}
@@ -35,11 +33,7 @@ export const query = graphql`
       frontmatter {
         title
         tag
-      }
-      parent {
-        ... on File {
-          modifiedTime(formatString: "MMMM D YYYY")
-        }
+        date(formatString: "MMMM DD YYYY")
       }
     }
   }

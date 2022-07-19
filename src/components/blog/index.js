@@ -4,9 +4,10 @@ import BlogItem from "./BlogItem"
 
 const Blog = () => {
   const articles = useStaticQuery(graphql`
-    {
-      allMarkdownRemark {
+    query {
+      allMarkdownRemark(sort: { order: DESC, fields: frontmatter___date }) {
         nodes {
+          id
           frontmatter {
             title
             tag
@@ -23,9 +24,9 @@ const Blog = () => {
     }
   `)
 
-  const allArticles = articles.allMarkdownRemark.nodes.map((item, index) => (
+  const allArticles = articles.allMarkdownRemark.nodes.map(item => (
     <BlogItem
-      key={index}
+      key={item.id}
       slug={item.frontmatter.slug}
       alt={item.frontmatter.title}
       title={item.frontmatter.title}

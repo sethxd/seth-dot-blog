@@ -2,6 +2,7 @@
 title: Why did I build another blog?
 slug: why-did-i-build-another-blog
 tag: general
+date: 2022-07-19
 ---
 
 This just keeps happening to me.
@@ -17,4 +18,13 @@ So this iteration of the blog is using Gatsby for the frontend and straight up m
 console.log('Hello, world.')
   ```
 
-I followed [this guide](https://blog.logrocket.com/using-gatsby-with-tailwind-css-a-tutorial-with-examples/) to start my Gatsby site and install Tailwind.
+I followed [this guide](https://blog.logrocket.com/using-gatsby-with-tailwind-css-a-tutorial-with-examples/) to start my Gatsby site and install Tailwind. So I've been messing around with Tailwind, getting some plugins installed, and figuring out some of the under-the-hood fun. Worked on the grid display and some conditional styling depending on if posts have a featured image in their frontmatter or not.
+
+## Next steps
+
+- Add additional styles to Markdown content, the Tailwind reset makes it pretty bare bones.
+- More tailored responsive styling
+- Create more pages (About, tag pages, related posts?)
+- Switch to MDX?
+
+For the moment I'm going to stop fiddling and just get something online.

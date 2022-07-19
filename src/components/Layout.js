@@ -14,7 +14,7 @@ const Layout = ({ children }) => {
   `)
 
   return (
-    <div>
+    <div className="flex flex-col min-h-screen">
       <Helmet title={data.site.siteMetadata.title} />
       <header className="p-8 text-left bg-black text-white">
         <div className="flex justify-between items-center">
@@ -25,7 +25,10 @@ const Layout = ({ children }) => {
           </Link>
         </div>
       </header>
-      <main className="max-w-6xl mx-auto">{children}</main>
+      <main className="max-w-6xl mx-auto flex-grow">{children}</main>
+      <footer className="bg-black text-white px-8 py-4">
+        &copy; {new Date().getFullYear()} Seth
+      </footer>
     </div>
   )
 }

@@ -4,7 +4,7 @@ import { GatsbyImage } from "gatsby-plugin-image"
 
 const BlogItem = ({ alt, image, slug, title }) => {
   return (
-    <div className="rounded-lg shadow-md text-white py-12 px-4 hover:shadow-xl relative group hover:-translate-y-1 duration-150 transition min-h-[200px] flex items-center justify-center">
+    <div className="rounded-lg shadow-md text-white py-12 px-6 hover:shadow-xl relative group hover:-translate-y-1 duration-150 transition min-h-[200px] flex items-center justify-center">
       {image ? (
         <GatsbyImage
           image={image}
