@@ -12,52 +12,9 @@ My next blog a few years later used [Gatsby](https://www.gatsbyjs.com/) for the 
 
 So this iteration of the blog is using Gatsby for the frontend and straight up markdown files for the posts. Keeping it simple. I started building this because I'm continually trying to learn and get better with React and I also wanted a playground to start learning Tailwind. This is as much a lab for me as it is a writing platform.
 
-- I followed [this guide](https://blog.logrocket.com/using-gatsby-with-tailwind-css-a-tutorial-with-examples/) to start my Gatsby site and install Tailwind.
-
 ```javascript
-// Testing this code block here
-plugins: [
-    "gatsby-plugin-postcss",
-    "gatsby-plugin-image",
-    "gatsby-plugin-sharp",
-    "gatsby-transformer-sharp",
-    {
-      resolve: "gatsby-transformer-remark",
-      options: {
-        plugins: [
-          {
-            resolve: "gatsby-remark-images",
-            options: {
-              maxWidth: 900,
-            },
-          },
-          {
-            resolve: "gatsby-remark-prismjs",
-            options: {
-              classPrefix: "language-",
-              inlineCofeMarker: null,
-              showLineNumbers: true,
-              noInlineHighlight: false,
-            },
-          },
-        ],
-      },
-    },
-
-    "gatsby-plugin-react-helmet",
-    {
-      resolve: "gatsby-source-filesystem",
-      options: {
-        name: `posts`,
-        path: `${__dirname}/src/posts/`,
-      },
-    },
-    {
-      resolve: "gatsby-source-filesystem",
-      options: {
-        name: `images`,
-        path: `${__dirname}/src/images/`,
-      },
-    },
-  ]
+// Testing this Prismic plugin here
+console.log('Hello, world.')
   ```
+
+I followed [this guide](https://blog.logrocket.com/using-gatsby-with-tailwind-css-a-tutorial-with-examples/) to start my Gatsby site and install Tailwind.

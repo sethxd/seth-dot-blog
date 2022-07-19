@@ -12,7 +12,7 @@ const BlogItem = ({ alt, image, slug, title }) => {
           className="absolute object-cover w-full h-full left-0 top-0 z-1 rounded-lg filter brightness-75 group-hover:brightness-50"
         />
       ) : (
-        <div className="absolute w-full h-full left-0 top-0 z-1 rounded-lg filter brightness-75 bg-gradient-to-r from-green-300 via-blue-500 to-purple-600 group-hover:brightness-50"></div>
+        <div className="absolute w-full h-full left-0 top-0 z-1 rounded-lg filter brightness-75 bg-gradient-animated group-hover:brightness-50"></div>
       )}
       <Link
         className="absolute h-full w-full left-0 top-0 z-20"

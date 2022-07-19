@@ -23,7 +23,6 @@ const Layout = ({ children }) => {
               {data.site.siteMetadata.title}
             </h1>
           </Link>
-          <nav>About</nav>
         </div>
       </header>
       <main className="max-w-6xl mx-auto">{children}</main>
