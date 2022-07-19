@@ -1,0 +1,63 @@
+---
+title: Why did I build another blog?
+slug: why-did-i-build-another-blog
+tag: general
+---
+
+This just keeps happening to me.
+
+[The first blog I built used Jekyll and free hosting through Github Pages.](https://github.com/sethxd/sethxd.github.io) That worked well enough, but I remember right I was using some custom gems and had to build everything locally, then push it live. More friction than I wanted. And I didn't have any other Ruby experience and wasn't looking to use it for anything else, so I was essentially acquiring useless experience.
+
+My next blog a few years later used [Gatsby](https://www.gatsbyjs.com/) for the frontend, and [Ghost](https://ghost.org/) for the backend. I used Netlify to host the published site, and a Digital Ocean droplet for my Ghost instance. I had a bunch of extra maintenance with this just trying to keep my Ghost instance updated and functional. I really like the look and feel of Ghost as a CMS but definitely feels like all the new feature development is focused on subscriptions, newsletters, monetization etc. And I just need basic blog platform.
+
+So this iteration of the blog is using Gatsby for the frontend and straight up markdown files for the posts. Keeping it simple. I started building this because I'm continually trying to learn and get better with React and I also wanted a playground to start learning Tailwind. This is as much a lab for me as it is a writing platform.
+
+- I followed [this guide](https://blog.logrocket.com/using-gatsby-with-tailwind-css-a-tutorial-with-examples/) to start my Gatsby site and install Tailwind.
+
+```javascript
+// Testing this code block here
+plugins: [
+    "gatsby-plugin-postcss",
+    "gatsby-plugin-image",
+    "gatsby-plugin-sharp",
+    "gatsby-transformer-sharp",
+    {
+      resolve: "gatsby-transformer-remark",
+      options: {
+        plugins: [
+          {
+            resolve: "gatsby-remark-images",
+            options: {
+              maxWidth: 900,
+            },
+          },
+          {
+            resolve: "gatsby-remark-prismjs",
+            options: {
+              classPrefix: "language-",
+              inlineCofeMarker: null,
+              showLineNumbers: true,
+              noInlineHighlight: false,
+            },
+          },
+        ],
+      },
+    },
+
+    "gatsby-plugin-react-helmet",
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: `posts`,
+        path: `${__dirname}/src/posts/`,
+      },
+    },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: `images`,
+        path: `${__dirname}/src/images/`,
+      },
+    },
+  ]
+  ```

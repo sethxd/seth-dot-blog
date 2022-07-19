@@ -1,3 +1,24 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.markdown-content p {
+  margin-bottom: 1rem;
+}
+
+.markdown-content a {
+  color: blue;
+}
+
+.markdown-content a:hover {
+  text-decoration: underline;
+}
+
+.markdown-content ul {
+  list-style: inside;
+  padding-left: 1rem;
+}
+
+.markdown-content ul li {
+  margin: 0 0 1rem;
+}
