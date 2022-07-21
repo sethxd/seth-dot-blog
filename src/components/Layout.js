@@ -25,7 +25,7 @@ const Layout = ({ children }) => {
           </Link>
         </div>
       </header>
-      <main className="max-w-6xl mx-auto flex-grow">{children}</main>
+      <main className="max-w-6xl md:mx-auto flex-grow">{children}</main>
       <footer className="bg-black text-white px-8 py-4">
         &copy; {new Date().getFullYear()} Seth
       </footer>
