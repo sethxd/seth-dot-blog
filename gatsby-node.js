@@ -3,7 +3,7 @@ const path = require(`path`)
 exports.createPages = async ({ graphql, actions }) => {
   const { data } = await graphql(`
     query AllArticles {
-      allMarkdownRemark {
+      allMdx {
         nodes {
           frontmatter {
             slug
@@ -13,7 +13,7 @@ exports.createPages = async ({ graphql, actions }) => {
     }
   `)
 
-  data.allMarkdownRemark.nodes.forEach(item => {
+  data.allMdx.nodes.forEach(item => {
     actions.createPage({
       path: `/blog/${item.frontmatter.slug}`,
       component: path.resolve(`src/templates/article.js`),

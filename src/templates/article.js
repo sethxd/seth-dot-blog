@@ -2,10 +2,10 @@ import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/Layout"
 import { Helmet } from "react-helmet"
+import { MDXRenderer } from "gatsby-plugin-mdx"
 
 const Article = ({ data }) => {
-  const { html } = data.markdownRemark
-  const { title, tag, date } = data.markdownRemark.frontmatter
+  const { title, tag, date } = data.mdx.frontmatter
   return (
     <Layout>
       <Helmet title={`${title} | seth.blog`} />
@@ -15,10 +15,9 @@ const Article = ({ data }) => {
         <span className="inline-block py-1 px-3 bg-slate-500 text-white">
           {tag}
         </span>
-        <div
-          className="my-8 markdown-content"
-          dangerouslySetInnerHTML={{ __html: html }}
-        ></div>
+        <section className="markdown-content my-8">
+          <MDXRenderer>{data.mdx.body}</MDXRenderer>
+        </section>
       </section>
     </Layout>
   )
@@ -28,8 +27,8 @@ export default Article
 
 export const query = graphql`
   query ArticleQuery($slug: String) {
-    markdownRemark(frontmatter: { slug: { eq: $slug } }) {
-      html
+    mdx(frontmatter: { slug: { eq: $slug } }) {
+      body
       frontmatter {
         title
         tag

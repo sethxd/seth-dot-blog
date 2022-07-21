@@ -5,7 +5,7 @@ import BlogItem from "./BlogItem"
 const Blog = () => {
   const articles = useStaticQuery(graphql`
     query {
-      allMarkdownRemark(sort: { order: DESC, fields: frontmatter___date }) {
+      allMdx(sort: { order: DESC, fields: frontmatter___date }) {
         nodes {
           id
           frontmatter {
@@ -18,13 +18,13 @@ const Blog = () => {
               }
             }
           }
-          html
+          body
         }
       }
     }
   `)
 
-  const allArticles = articles.allMarkdownRemark.nodes.map(item => (
+  const allArticles = articles.allMdx.nodes.map(item => (
     <BlogItem
       key={item.id}
       slug={item.frontmatter.slug}
