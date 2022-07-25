@@ -25,6 +25,7 @@
     "gatsby-remark-images": "^6.19.0",
     "gatsby-remark-prismjs": "^6.19.0",
     "gatsby-source-filesystem": "^4.18.1",
+    "gatsby-source-notion-api": "^0.11.0",
     "gatsby-transformer-sharp": "^4.18.1",
     "prismjs": "^1.28.0",
     "react": "^16.14.0",

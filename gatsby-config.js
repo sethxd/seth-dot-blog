@@ -4,10 +4,15 @@
  * See: https://www.gatsbyjs.com/docs/gatsby-config/
  */
 
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
 module.exports = {
   siteMetadata: {
     title: "seth.blog",
-    description: "A place to write things, sort of, but more to build things.",
+    description:
+      "A place to write things, sometimes, and also to build things.",
     siteUrl: "https://seth-dehaan.com",
   },
   plugins: [
@@ -61,6 +66,13 @@ module.exports = {
         start_url: "/",
         display: "standalone",
         icon: "src/images/code-slash-green.svg",
+      },
+    },
+    {
+      resolve: "gatsby-source-notion-api",
+      options: {
+        databaseId: process.env.GATSBY_NOTION_DATABASES,
+        token: process.env.GATSBY_NOTION_TOKEN,
       },
     },
   ],

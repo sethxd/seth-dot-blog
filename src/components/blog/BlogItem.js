@@ -9,16 +9,18 @@ const BlogItem = ({ alt, image, slug, title }) => {
         <GatsbyImage
           image={image}
           alt={alt}
-          className="absolute object-cover w-full h-full left-0 top-0 z-1 rounded-lg filter brightness-75 group-hover:brightness-50"
+          className="absolute object-cover w-full h-full left-0 top-0 z-1 rounded-lg"
         />
       ) : (
-        <div className="absolute w-full h-full left-0 top-0 z-1 rounded-lg filter brightness-75 bg-gradient-animated group-hover:brightness-50"></div>
+        <div className="absolute w-full h-full left-0 top-0 z-1 rounded-lg bg-gradient-animated"></div>
       )}
       <Link
         className="absolute h-full w-full left-0 top-0 z-20"
         to={`blog/${slug}`}
       ></Link>
-      <h2 className="text-center z-10 relative text-xl">{title}</h2>
+      <h2 className="text-center z-10 relative text-xl bg-black bg-opacity-70 px-1">
+        {title}
+      </h2>
     </div>
   )
 }

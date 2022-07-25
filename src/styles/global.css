@@ -27,11 +27,11 @@
 
 .markdown-content ul {
   list-style: inside;
-  padding-left: 1rem;
+  padding-left: 0.5rem;
 }
 
 .markdown-content ul li {
-  margin: 0 0 1rem;
+  margin: 0 0 0.5rem;
 }
 
 .gatsby-highlight {

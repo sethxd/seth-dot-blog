@@ -5,7 +5,10 @@ import BlogItem from "./BlogItem"
 const Blog = () => {
   const articles = useStaticQuery(graphql`
     query {
-      allMdx(sort: { order: DESC, fields: frontmatter___date }) {
+      allMdx(
+        filter: { slug: { glob: "*" } }
+        sort: { order: DESC, fields: frontmatter___date }
+      ) {
         nodes {
           id
           frontmatter {
