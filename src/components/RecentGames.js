@@ -11,6 +11,7 @@ const RecentGames = () => {
       ) {
         nodes {
           title
+          id
           properties {
             Last_played {
               value {
@@ -35,14 +36,30 @@ const RecentGames = () => {
 
   const recentGames = games.allNotion.nodes.map(item => (
     <div
-      className={`relative m-4 px-4 py-6 flex flex-grow justify-start sm:justify-between items-center w-full sm:w-auto last:flex-grow-0 ${
-        item.properties.Platform.value.name === "Playstation" &&
-        "bg-[#2E65E6] text-white"
-      }
-      ${item.properties.Platform.value.name === "PC" && "bg-black text-white"}
-      `}
+      key={item.id}
+      className={`relative m-4 px-4 py-6 flex flex-grow justify-between items-center w-full sm:w-auto last:flex-grow-0 ${
+        item.properties.Platform.value.name === "Playstation"
+          ? "bg-[#2E65E6] text-white"
+          : ""
+      }${
+        item.properties.Platform.value.name === "PC"
+          ? "bg-black text-white"
+          : ""
+      }${
+        item.properties.Platform.value.name === "Switch"
+          ? "bg-[#DD000E] text-white"
+          : ""
+      }${
+        item.properties.Platform.value.name === "Game Boy Advance"
+          ? "bg-[#2517C2] text-white"
+          : ""
+      }${
+        item.properties.Platform.value.name === "Vita"
+          ? "bg-[#333333] text-white"
+          : ""
+      }`}
     >
-      <span className="mr-2">{item.title}</span>
+      <span className="mr-4">{item.title}</span>
       <span className="absolute -top-2 -left-1 text-xs bg-white text-black p-1 border border-black">
         {item.properties.Last_played.value.start}
       </span>
@@ -82,11 +99,37 @@ const RecentGames = () => {
           src="../static/steam-logo.svg"
         />
       )}
+      {item.properties.Platform.value.name === "Switch" && (
+        <StaticImage
+          className="invert w-6"
+          alt="PC"
+          title="PC"
+          src="../static/switch.svg"
+        />
+      )}
+      {item.properties.Platform.value.name === "Vita" && (
+        <StaticImage
+          className="invert w-16"
+          alt="Vita"
+          title="Vita"
+          src="../static/vita.svg"
+        />
+      )}
+      {item.properties.Platform.value.name === "Game Boy Advance" && (
+        <StaticImage
+          className="w-32"
+          alt="GBA"
+          title="GBA"
+          src="../static/gba.svg"
+        />
+      )}
     </div>
   ))
 
   return (
-    <section className="flex justify-between flex-wrap">{recentGames}</section>
+    <section className="flex justify-between flex-wrap mt-4">
+      {recentGames}
+    </section>
   )
 }
 
