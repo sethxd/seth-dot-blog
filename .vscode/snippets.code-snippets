@@ -1,0 +1,15 @@
+{
+
+	"Insert frontmatter": {
+		"prefix": "frontmatter",
+		"body": [
+			"---",
+			"title: Dredge demo impressions",
+			"slug: dredge-demo-impressions",
+			"tag: games",
+			"image: ..images/example.png",
+			"date: 2022-09-30",
+			"---"
+		]
+	}
+}
