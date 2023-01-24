@@ -65,23 +65,32 @@ const RecentGames = () => {
       </span>
       <span
         className={`absolute -bottom-3 -right-1 text-xs p-1 ${
-          item.properties.Progress.value.name === "Started" &&
-          "bg-amber-300 text-black"
-        }
-        ${
-          item.properties.Progress.value.name === "Completed" &&
-          "bg-green-200 text-black"
-        }
-        ${
-          item.properties.Progress.value.name === "100%" &&
-          "bg-purple-800 text-white"
-        }
-        ${
-          item.properties.Progress.value.name === "Dropped" &&
-          "bg-gray-300 text-black"
+          item.properties.Progress.value[0].name === "Started"
+            ? "bg-amber-300 text-black"
+            : ""
+        }${
+          item.properties.Progress.value[0].name === "Completed"
+            ? "bg-green-200 text-black"
+            : ""
+        }${
+          item.properties.Progress.value[0].name === "100%"
+            ? "bg-purple-800 text-white"
+            : ""
+        }${
+          item.properties.Progress.value[0].name === "Ongoing"
+            ? "bg-indigo-300 text-black"
+            : ""
+        }${
+          item.properties.Progress.value[0].name === "Replay"
+            ? "bg-rose-600 text-white"
+            : ""
+        }${
+          item.properties.Progress.value[0].name === "Dropped"
+            ? "bg-gray-300 text-black"
+            : ""
         }`}
       >
-        {item.properties.Progress.value.name}
+        {item.properties.Progress.value[0].name}
       </span>
       {item.properties.Platform.value.name === "Playstation" && (
         <StaticImage
